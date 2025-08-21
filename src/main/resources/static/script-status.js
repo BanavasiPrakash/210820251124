@@ -35,7 +35,7 @@ const statusTableBody = document.querySelector("#statusTable tbody");
 const lastUpdatedEl = document.getElementById("lastUpdated");
 
 async function renderStatusTable() {
-    const resp = await fetch('/api/ip');
+    const resp = await fetchWithAuth('/api/ip');
     const ipData = await resp.json();
 
     statusTableBody.innerHTML = "";
@@ -46,7 +46,7 @@ async function renderStatusTable() {
         return 0;
     });
 
-    const columns = 5;  // number of columns per row
+    const columns = 6;  // number of columns per row
     for (let i = 0; i < ipData.length; i += columns) {
         const row = document.createElement("tr");
         // For each column in this row

@@ -26,7 +26,7 @@ body {
 }
 
 .suprajit-logo {
-    height: 40px;
+    height: 60px;
     width: auto;
     display: block;
 }
@@ -154,6 +154,7 @@ form button:focus {
     line-height: 1.1;
     height: 22px;
     border: 1px solid #606060;
+    border-radius: 60px;
     text-align: center;
     /* background-color removed to honor status classes in statusTable */
 }
@@ -253,6 +254,20 @@ th {
 .delete-btn:hover {
     background-color: #5a2e9d;
 }
+.edit-btn, .save-btn, .cancel-btn {
+  margin-right: 5px;
+  background-color: #ef6724;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.edit-btn:hover, .save-btn:hover, .cancel-btn:hover {
+  background-color: #bd2331;
+}
+
 
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 900px) {

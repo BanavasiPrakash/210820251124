@@ -3,8 +3,10 @@ package com.ipmonitoring.ipmonitoringapp.service;
 import java.net.InetAddress;
 import java.time.LocalDateTime;
 import java.util.List;
+
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+
 import com.ipmonitoring.ipmonitoringapp.model.IpAddress;
 import com.ipmonitoring.ipmonitoringapp.repository.IpAddressRepository;
 
@@ -16,7 +18,7 @@ public class IpHealthCheckService {
         this.repository = repository;
     }
 
-    @Scheduled(fixedDelay = 30000) // every 30 seconds
+    @Scheduled(fixedDelay = 10000) // every 30 seconds
     public void healthCheckAllIps() {
         List<IpAddress> ips = repository.findAll();
         for (IpAddress ipAddress : ips) {
