@@ -1,14 +1,20 @@
 function switchTab(tab) {
-  document.getElementById('signup-form').classList.toggle('active', tab === 'signup');
-  document.getElementById('login-form').classList.toggle('active', tab === 'login');
-  document.getElementById('signup-tab').classList.toggle('active', tab === 'signup');
-  document.getElementById('login-tab').classList.toggle('active', tab === 'login');
+  const signupContainer = document.getElementById('signup-container');
+  const loginContainer = document.getElementById('login-container');
+
+  if (tab === 'signup') {
+    signupContainer.classList.add('active');
+    loginContainer.classList.remove('active');
+  } else {
+    loginContainer.classList.add('active');
+    signupContainer.classList.remove('active');
+  }
+
+  document.getElementById('new-user-btn').classList.toggle('active', tab === 'signup');
+  document.getElementById('login-btn').classList.toggle('active', tab === 'login');
+
   document.getElementById('signup-message').textContent = '';
   document.getElementById('login-message').textContent = '';
-}
-
-function showForms() {
-  document.getElementById('auth-cards').style.display = 'block';
 }
 
 async function submitSignup(event) {
